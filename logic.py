@@ -48,9 +48,42 @@ def solveSudoku(sudoku,startRow,startCol):
         sudoku[startRow][startCol] = 0
     return False
 
+
+# Fixed a bug that caused the solver to hang (due to recursion) when an unsolvable/Invalid sudoku was entered, ensuring smoother functionality.
+def isValidSudoku(board):
+    for i in range(9):
+        # create empty dictionaries to keep track of row, column, and block values
+        row = {}
+        column = {}
+        block = {}
+        # calculate the starting index of the current 3x3 block
+        row_cube = 3 * (i//3)
+        column_cube = 3 * (i%3)
+        for j in range(9):
+            # check if the value in the current cell of the row is valid
+            if board[i][j]!=0 and board[i][j] in row:
+                return False
+            row[board[i][j]] = 1  # add the value to the row dictionary
+            
+            # check if the value in the current cell of the column is valid
+            if board[j][i]!=0 and board[j][i] in column:
+                return False
+            column[board[j][i]] = 1  # add the value to the column dictionary
+            
+            # calculate the row and column index of the current cell within the 3x3 block
+            rc = row_cube+j//3
+            cc = column_cube + j%3
+            
+            # check if the value in the current cell of the block is valid
+            if board[rc][cc] in block and board[rc][cc]!=0:
+                return False
+            block[board[rc][cc]] = 1  # add the value to the block dictionary
+    return True
+
 # Function to return solved sudoku
 def sudokuSolver(sudoku):
-    if solveSudoku(sudoku,0,0):
+    if isValidSudoku(sudoku):
+        solveSudoku(sudoku,0,0)
         return sudoku
     else:
         return "No"
