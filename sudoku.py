@@ -1,4 +1,5 @@
 from tkinter import *
+from logic import sudokuSolver
 
 root = Tk()
 root.title("Sudoku Solver")
@@ -66,6 +67,7 @@ def getValues():
             else:
                 rows.append(int(val))
         board.append(rows)
+    updateValues(board)
 
 # Create a button
 btn = Button(root,command=getValues, text="Solve" , width=10)
@@ -73,6 +75,19 @@ btn.grid(row = 20 , column = 1, columnspan=5, pady=20)
 
 btn = Button(root,command=clearValues, text="Clear" , width=10)
 btn.grid(row = 20 , column = 5, columnspan=5, pady=20)
+
+# function which will update the cell and display the solved sudoku
+def updateValues(s):
+    sol = sudokuSolver(s)
+    if sol != "No":
+        for rows in range(2 ,11):
+            for cols in range(1, 10):
+                cells[(rows,cols)].delete(0,"end")
+                cells[(rows,cols)].insert(0,sol[rows-2][cols-1])
+        solvedLabel.config(text="Sudoku solved!")
+    else:
+        errLabel.config(text="No solution exists for this suduko")    
+
 
 # Now for luanching sudoku solver
 draw9x9Grid()
