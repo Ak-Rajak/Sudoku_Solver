@@ -2,10 +2,8 @@
 
 A modern, responsive web application that solves Sudoku puzzles with an elegant user interface and smooth animations.
 
-## 🌐 Live Demo
+## 🌐 Live 
 Check out the live application: [Sudoku Solver](https://sudokusolver1.onrender.com/)
-
-![Sudoku Solver Demo](https://raw.githubusercontent.com/username/sudoku-solver/main/demo.gif)
 
 ## ✨ Features
 
@@ -23,26 +21,6 @@ Check out the live application: [Sudoku Solver](https://sudokusolver1.onrender.c
 - **Styling**: Custom CSS with responsive design
 - **Custom Font**: DreamlandStd for enhanced visual appeal
 - **Deployment**: Hosted on Render
-
-## 💻 Local Development
-
-1. Clone the repository:
-```bash
-git clone https://github.com/username/sudoku-solver.git
-cd sudoku-solver
-```
-
-2. Install the required dependencies:
-```bash
-pip install flask
-```
-
-3. Run the application:
-```bash
-python app.py
-```
-
-4. Open your browser and navigate to `http://localhost:5000`
 
 ## 🎯 How to Use
 
@@ -71,7 +49,7 @@ python app.py
 - Clear error messaging
 - Protected against invalid board configurations
 
-## 🛠️ Technical Implementation
+## 💻 Technical Implementation
 
 The project is structured into several key components:
 
@@ -93,17 +71,5 @@ The application is fully responsive and includes:
 - Adaptive grid sizing
 - Optimized font sizes for readability
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 📞 Contact
-
-For questions or feedback, please open an issue in the GitHub repository.
-
 ---
-Made with ❤️ by [Your Name]
+Made with ❤️ by Ak-Rajak
