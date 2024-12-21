@@ -2,27 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sudoku Solver</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Soduko Solver</h1>
-        <div id="message"></div>
+        <h1>Sudoku Solver</h1>
+        <div id="message">Enter your puzzle and click "Solve"</div>
         <div class="sudoku-grid" id="grid"></div>
-
-        <!-- Grid -->
-        <div class="grid-lines">
-            <!-- horizontal lines -->
-            <div class="horizontal-line" style="top: 147px;"></div>
-            <div class="horizontal-line" style="top: 294px;"></div>
-            <!-- vertical lines -->
-            <div class="vertical-line" style="left: 147px;"></div>
-            <div class="vertical-line" style="left: 294px;"></div>
-        </div>
-
-
         <div class="buttons">
             <button id="solve-btn" onclick="solveSudoku()">Solve</button>
             <button id="clear-btn" onclick="clearGrid()">Clear</button>
